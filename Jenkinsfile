@@ -5,9 +5,10 @@ pipeline {
         stage('Build') {
             steps {
                 script {
-                    // Maven build
-                    def mvnHome = tool 'Maven'
-                    sh "${mvnHome}/bin/mvn clean install"
+                    dir('COMP367-Lab2/COMP367_Lab2') {
+                        def mvnHome = tool 'Maven'
+                        sh "${mvnHome}/bin/mvn clean install"
+                    }
                 }
             }
         }
