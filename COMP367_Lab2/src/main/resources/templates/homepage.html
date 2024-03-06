@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+	<!-- 
+		Author: Benton Le
+		Student #: 301 174 103
+ 		Professor: Vivek Ahuja
+ 		Course: COMP303 - 401
+ 		Assignment: Assignment1
+ 		Date: 02-03-2024
+	-->
+	<head>
+		<meta http-equiv="Content-Type" context="text/html;charset=UTF-8" />
+		<title>COMP303 - 401</title>
+		<h1>Welcome To My COMP303 - 401 Spring Web Page</h1>
+		<h3>Navigate the pages through the links below:</h3>
+		<table style="border:solid; border-radius: 10px; width: 100%;">
+			<tr style="border:solid;">
+				<td><a style="text-decoration: none; font-size: 18px;" href="/">Home</a></td>
+				<td><a style="text-decoration: none; font-size: 18px;" href="/index">Assignment 1</a></td>
+			</tr>
+		</table>
+	</head>
+	<body style="background-color: antiquewhite;">
+		<table>
+			<tr>
+				<td><img th:src="@{/images/me.png}" /></td>
+			</tr>
+			<tr><td><h3>About Me:</h3></td></tr>
+			<tr>
+				<td>
+					<p>
+						This webpage is used to display my experience in COMP303 with Springboot and Thymeleaf.
+						I am currently in my 3rd year in the Software Engineering Technology
+						program.<br>
+						I am currently enrolled in the following 6 courses:<br>
+						<ul>
+							<li>COMP321</li>
+							<li>COMP367</li>
+							<li>COMP308</li>
+							<li>COMP303</li>
+							<li>COMP231</li>
+							<li>CNET307</li>
+						</ul><br>
+						I am hoping to learn alot from these course this semester, as well as
+						to be able to find my 3rd work term co-op for the summer semester.
+					</p>
+				</td>
+			</tr>
+		</table>
+	</body>
+	
+	<footer>
+		<h3>Benton Le - 301174103</h3>
+	</footer>
+</html>
