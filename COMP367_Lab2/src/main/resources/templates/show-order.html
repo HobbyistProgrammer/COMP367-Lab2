@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+	<!-- 
+		Author: Benton Le
+		Student #: 301 174 103
+ 		Professor: Vivek Ahuja
+ 		Course: COMP303 - 401
+ 		Assignment: Assignment1
+ 		Date: 02-03-2024
+	-->
+	<head>
+		<h1>Show Order Details</h1>
+		<h3>Navigate the pages through the links below:</h3>
+		<table style="border:solid; border-radius: 10px; width: 100%;">
+			<tr style="border:solid;">
+				<td><a style="text-decoration: none; font-size: 18px;" href="/">Home</a></td>
+				<td><a style="text-decoration: none; font-size: 18px;" href="/index">Assignment 1</a></td>
+			</tr>
+		</table>
+		<title>Show Orders Page</title>
+	</head>
+	<body>
+		<h1>Order Details</h1>
+		<div th:if="${order}">
+			<p><strong>Welcome <span th:text="${order.fname + ' ' + order.lname}"></span></strong></p>
+			<p><strong>Email Address: </strong> <span th:text="${order.email}"></span></p>
+			<p><strong>Phone Number: </strong> <span th:text="${order.phoneNumber}"></span></p>
+			<p><strong>Address: </strong> <span th:text="${order.address + ', ' + order.city + ', ' + order.province}"></span></p>
+			<p><strong>Country/Zip Code: </strong> <span th:text="${order.countries + ', ' + order.zip}"></span></p>
+			<p><strong>Street Address Line 2: </strong> <span th:text="${order.address2}"></span></p>
+			<br><br>
+			
+			<h2>Phone Details</h2>
+			<p><strong>Product #: </strong> <span th:text="${order.productNum}"></span></p>
+			<p><strong>Phone Brand: </strong> <span th:text="${order.brand}"></span></p>
+			<p><strong>Phone Model: </strong> <span th:text="${order.model}"></span></p>
+			<p><strong>Phone Price: CAD $</strong> <span th:text="${product}"></span></p>
+			<p><strong>Quantity: </strong> <span th:text="${order.orderQty}"></span></p>
+			<p><strong>Total: CAD $</strong> <span th:text="${total}"></span></p>
+		</div>
+	</body>
+	<footer>
+		<h3>Benton Le - 301174103</h3>
+	</footer>
+</html>
