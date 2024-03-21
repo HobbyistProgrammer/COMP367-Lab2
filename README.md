@@ -8,7 +8,7 @@ This project enhances the booking experience for customers interested in Celebri
 # Success Factors:
 Must-Haves:
 - [ ]The MVC app should successfully handle POST requests from the index.html form, capturing user input accurately.
-- [ ]The Cruise.java model class should effectively store and manage user input data.
+- [ ]#1
 - [ ]The CruiseController.java class should process user input and generate a confirmation page with detailed booking information.
 Nice-to-Haves:
 •	Implementation of additional features such as real-time pricing updates based on selected options.
