@@ -23,7 +23,9 @@ pipeline {
         stage('Docker build') {
             steps {
                 script {
-                    env.dockerImage = docker.build('lab4_docker')
+                    def dockerImage = docker.build('lab4_docker')
+		    dockerImage.tag('ble21@my.centennialcollege.ca/lab4_docker:latest')
+		    env.docker_image = 'ble21@my.centennialcollege.ca/lab4_docker:latest'
                 }
             }
         }
@@ -41,7 +43,7 @@ pipeline {
             steps {
                 script {
                     docker.withRegistry('https://registry.hub.docker.com', 'dockerhub-credentials') {
-                        def temp = env.dockerImage
+                        def temp = env.docker_image
 			
 			sh "docker push $temp"
                     }
