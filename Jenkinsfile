@@ -7,7 +7,6 @@ pipeline {
 
 
     environment {
-	docker_image = ''
         registryCredential = 'dockerhub-credentials'
     }
 
@@ -49,7 +48,7 @@ pipeline {
                 script {
                     docker.withRegistry('https://registry.hub.docker.com', 'dockerhub-credentials') {
 			echo "pushing docker image: $env.dockerImage"
-			env.dockerImage.push()
+			sh "docker push $env.dockerImage"
                     }
                 }
             }
