@@ -5,6 +5,12 @@ pipeline {
         maven 'maven-3.8.6'
     }
 
+
+    environment {
+	docker_image = ''
+        registryCredential = 'dockerhub-credentials'
+    }
+
     stages {
         stage('Check out') {
             steps {
@@ -42,19 +48,14 @@ pipeline {
             steps {
                 script {
                     docker.withRegistry('https://registry.hub.docker.com', 'dockerhub-credentials') {
-                        def temp = env.docker_image
-			echo "pushing docker image: $env.docker_image"
-			sh "docker push $temp"
+			echo "pushing docker image: $env.dockerImage"
+			sh "docker push $dockerImage"
                     }
                 }
             }
         }
     }
 
-    environment {
-	docker_image = ''
-        registryCredential = 'dockerhub-credentials'
-    }
 
     post {
         always {
