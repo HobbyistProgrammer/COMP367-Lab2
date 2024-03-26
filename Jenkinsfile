@@ -23,9 +23,7 @@ pipeline {
         stage('Docker build') {
             steps {
                 script {
-                    def dockerImage = docker.build('lab4_docker')
-		    dockerImage.tag('ble21@my.centennialcollege.ca/lab4_docker:latest')
-		    env.docker_image = 'ble21@my.centennialcollege.ca/lab4_docker:latest'
+                    env.dockerImage = docker.build('lab4_docker')
                 }
             }
         }
