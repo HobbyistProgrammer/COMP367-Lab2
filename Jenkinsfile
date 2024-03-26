@@ -43,7 +43,7 @@ pipeline {
                 script {
                     docker.withRegistry('https://registry.hub.docker.com', 'dockerhub-credentials') {
                         def temp = env.docker_image
-			echo "pushing docker image: $temp" 
+			echo "pushing docker image: $env.docker_image"
 			sh "docker push $temp"
                     }
                 }
