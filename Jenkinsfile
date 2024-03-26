@@ -47,8 +47,9 @@ pipeline {
             steps {
                 script {
                     docker.withRegistry('https://registry.hub.docker.com', 'dockerhub-credentials') {
-			echo "pushing docker image: $env.dockerImage"
-			sh "docker push $env.dockerImage"
+			def lowercase = env.dockerImage.toLowerCase()
+			echo "pushing docker image: $lowercase"
+			sh "docker push $lowercase"
                     }
                 }
             }
