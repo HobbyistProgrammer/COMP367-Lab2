@@ -4,6 +4,9 @@ pipeline {
     tools {
         maven 'maven-3.8.6'
     }
+	
+    def dockerImage
+
     stages {
         stage('Check out') {
             steps {
@@ -22,7 +25,7 @@ pipeline {
         stage('Docker build') {
             steps {
                 script {
-                    def dockerImage = docker.build('lab4_docker')
+                    dockerImage = docker.build('lab4_docker')
                 }
             }
         }
