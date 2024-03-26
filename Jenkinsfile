@@ -49,7 +49,7 @@ pipeline {
                     docker.withRegistry('https://registry.hub.docker.com', 'dockerhub-credentials') {
 			def lowercase = env.dockerImage.toLowerCase()
 			echo "pushing docker image: $lowercase"
-			sh "docker push ${lowercase:latest}"
+			sh "docker push ${lowercase}:latest"
                     }
                 }
             }
