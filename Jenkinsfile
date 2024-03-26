@@ -4,8 +4,6 @@ pipeline {
     tools {
         maven 'maven-3.8.6'
     }
-	
-    def dockerImage
 
     stages {
         stage('Check out') {
@@ -25,7 +23,7 @@ pipeline {
         stage('Docker build') {
             steps {
                 script {
-                    dockerImage = docker.build('lab4_docker')
+                    env.dockerImage = docker.build('lab4_docker')
                 }
             }
         }
@@ -43,7 +41,7 @@ pipeline {
             steps {
                 script {
                     docker.withRegistry('https://registry.hub.docker.com', 'dockerhub-credentials') {
-                        dockerImage.push()
+                        env.dockerImage.push()
                     }
                 }
             }
