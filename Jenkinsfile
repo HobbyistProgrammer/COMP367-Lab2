@@ -41,9 +41,6 @@ pipeline {
 			def lowercase = env.dockerImage.toLowerCase()
 			echo "pushing docker image: $lowercase"
 			sh "docker push ${lowercase}:latest"
-
-			env.dockerImage.push()
-			env.dockerImage.toLowerCase().push()
                     }
                 }
             }
