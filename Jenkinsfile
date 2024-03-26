@@ -49,7 +49,7 @@ pipeline {
                 script {
                     docker.withRegistry('https://registry.hub.docker.com', 'dockerhub-credentials') {
 			echo "pushing docker image: $env.dockerImage"
-			$env.dockerImage.push()
+			env.dockerImage.push()
                     }
                 }
             }
