@@ -24,6 +24,7 @@ pipeline {
             steps {
                 script {
                     env.dockerImage = docker.build('lab4_docker')
+		    echo "building docker image: $env.dockerImage" 
                 }
             }
         }
@@ -51,6 +52,7 @@ pipeline {
     }
 
     environment {
+	docker_image = ''
         registryCredential = 'dockerhub-credentials'
     }
 
